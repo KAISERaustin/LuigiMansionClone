@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bwtxlq5c077lo"]
+[gd_scene load_steps=9 format=4 uid="uid://bwtxlq5c077lo"]
 
 [ext_resource type="Texture2D" uid="uid://wqnp0visp3go" path="res://Assets/Environment Tilesets/FG_Cellar_A5.png" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://benyscyee1wke" path="res://Scripts/Level.gd" id="1_xylue"]
 [ext_resource type="Texture2D" uid="uid://bh6csr0yb2vrg" path="res://Assets/Environment Tilesets/FG_Cellar_C.png" id="2_8rbpu"]
 [ext_resource type="PackedScene" uid="uid://cqtfplx68hfo1" path="res://Scenes/UI.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" uid="uid://phn4qtdurft2" path="res://Scenes/Player.tscn" id="5_xylue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsvp5"]
 texture = ExtResource("1_0ba56")
@@ -422,3 +423,8 @@ tile_map_data = PackedByteArray("AAABAAUAAgAJAAQAAAACAAUAAgAJAAQAAAAEAAUAAgAJAAQ
 tile_set = SubResource("TileSet_8rbpu")
 
 [node name="UI" parent="." instance=ExtResource("4_fuudy")]
+
+[node name="Player" parent="." instance=ExtResource("5_xylue")]
+position = Vector2(118, 79)
+
+[connection signal="energy_changed" from="Player" to="UI" method="set_energy"]

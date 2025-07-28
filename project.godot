@@ -15,10 +15,6 @@ run/main_scene="uid://bwtxlq5c077lo"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-NetworkManager="*res://Scripts/NetworkManager.gd"
-
 [display]
 
 window/size/viewport_width=640
