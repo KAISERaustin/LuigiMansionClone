@@ -16,11 +16,6 @@ var current_pickup: Node = null
 func _ready() -> void:
 	randomize()
 	_populate_spawn_positions()
-	# Optional: spawn one immediately
-	spawn_energy_pickup()
-	
-	NetworkManager.start_server()
-
 	# Create & start a 15s repeating timer
 	var timer = Timer.new()
 	timer.wait_time = 15.0
@@ -63,3 +58,9 @@ func spawn_energy_pickup() -> void:
 
 	# remember it so we don’t spawn duplicates
 	current_pickup = pickup
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):   # e.g. Enter
+		NetworkManager.start_server()
+	elif event.is_action_pressed("ui_select"): # e.g. “J”
+		NetworkManager.connect_to_server("127.0.0.1")

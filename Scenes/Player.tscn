@@ -500,6 +500,7 @@ animations = [{
 size = Vector2(14, 24)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
